@@ -6,28 +6,24 @@
   <title>Darling’s — Coming Soon</title>
   <meta name="description" content="Darling’s Bagel Chips are on the way. Join the waitlist for launch news and early-bird perks." />
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Darling’s — Coming Soon" />
   <meta property="og:description" content="Darling’s Bagel Chips are on the way. Join the waitlist for launch news and early-bird perks." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://darlingsfoodco.com/" />
   <meta property="og:image" content="https://darlingsfoodco.com/og-image.jpg" />
 
-  <!-- Favicons (simple SVG emoji fallback) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E🥯%3C/text%3E%3C/svg%3E">
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg1:#fffbe6;          /* pale yellow */
-      --bg2:#ffe27a;          /* warm yellow */
-      --bg3:#ffffff;          /* soft white */
-      --card:#ffffffcc;       /* translucent white */
-      --ink:#111;             /* black text */
+      --bg1:#fffbe6;
+      --bg2:#ffe27a;
+      --bg3:#ffffff;
+      --card:#ffffffcc;
+      --ink:#111;
       --muted:#5b5b5b;
-      --accent:#111;          /* buttons use black text on yellow BG */
       --radius:20px;
       --shadow:0 10px 30px rgba(0,0,0,.10);
       --maxw:1000px;
@@ -38,7 +34,6 @@
       margin:0;
       color:var(--ink);
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      /* Bright, cheerful gradient background */
       background:
         radial-gradient(1200px 600px at 80% -10%, var(--bg2), transparent 60%),
         radial-gradient(900px 500px at 0% 100%, var(--bg1), transparent 60%),
@@ -55,16 +50,8 @@
       overflow:hidden;
     }
     header{
-      padding: 28px 28px 0 28px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
-    }
-    .brand img{
-      height:120px; width:auto; display:block;
-      /* If your logo is very wide, let it shrink on mobile */
-      max-width: 600px;
+      padding: 20px 28px 0 28px;
+      display:flex; align-items:center; justify-content:flex-end;
     }
     .cta{
       border-radius: 999px; padding:10px 16px;
@@ -72,7 +59,17 @@
       background:#fff; color:var(--ink); text-decoration:none; font-weight:700; font-size:14px;
     }
     .hero{
-      padding: 28px; display:grid; gap:18px;
+      padding: 28px; display:grid; gap:18px; text-align:center;
+    }
+    .logo-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom: 20px;
+    }
+    .logo-wrap img{
+      height: 120px; /* Adjust size here */
+      width: auto;
+      max-width: 90%;
     }
     .title{
       font-family:"Playfair Display", serif;
@@ -87,7 +84,7 @@
       line-height:1.6; margin:4px 0 0 0;
     }
     .notify{
-      display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;
+      display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; justify-content:center;
     }
     input[type="email"]{
       flex: 1 1 260px; min-width: 0;
@@ -105,7 +102,7 @@
     }
     button[type="submit"]:active{ transform: translateY(1px) }
     .meta{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; color:#333; font-size:13px;
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; color:#333; font-size:13px; justify-content:center;
     }
     .pill{padding:8px 12px; border-radius:999px; border:1px dashed rgba(0,0,0,.2); background:#fff;}
     .footer{
@@ -117,33 +114,21 @@
     .links a:hover{opacity:.8}
     .hidden{display:none}
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Darling’s",
-    "url":"https://darlingsfoodco.com",
-    "logo":"https://darlingsfoodco.com/assets/logo.png"
-  }
-  </script>
 </head>
 <body>
   <main class="wrap">
     <section class="card" aria-labelledby="title">
       <header>
-        <!-- 🔽 Replace the src path with your real logo file in the repo -->
-        <a class="brand" href="/" aria-label="Darling’s home">
-          <img src="assets/logo.png" alt="Darling’s logo" />
-        </a>
         <a class="cta" href="mailto:hello@darlingsfoodco.com">Contact</a>
       </header>
 
       <div class="hero">
+        <div class="logo-wrap">
+          <img src="assets/logo.png" alt="Darling’s logo" />
+        </div>
         <h1 id="title" class="title">We’re baking something delicious.</h1>
         <p class="subtitle">A new snack line from Darling’s is on the way. Pop your email in and we’ll let you know when we launch (plus early-bird perks).</p>
 
-        <!-- Replace action with your Formspree endpoint (or another form handler) -->
         <form class="notify" action="https://formspree.io/f/yourid" method="POST" onsubmit="handleSubmit(event)">
           <input type="email" name="email" placeholder="Enter your email" required />
           <button type="submit">Notify Me</button>
@@ -161,9 +146,9 @@
       <div class="footer">
         <div>© <span id="year"></span> Darling’s. All rights reserved.</div>
         <div class="links">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="TikTok">TikTok</a>
-          <a href="#" aria-label="X">X</a>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">X</a>
         </div>
       </div>
     </section>
@@ -171,7 +156,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     async function handleSubmit(e){
       const form = e.target;
       if (form.action.startsWith('mailto:')) return;
